@@ -2,6 +2,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import processing_algorithms
 from utils import Utils
+from chat_gpt import ChatGPT
 
 
 class Medthread:
@@ -20,7 +21,7 @@ class Medthread:
         list_of_files = self.listdir_nohidden("research_papers")
         for file in list_of_files:
             self.conclusions.append({
-                "conclusion": Utils().read_pdf(file)
+                "conclusion": ChatGPT().get_data_from_research_paper_based_on_feature(Utils().read_pdf(file))
             })
             self.research_papers.append(file)
 

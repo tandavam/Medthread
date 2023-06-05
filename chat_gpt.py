@@ -8,9 +8,9 @@ class ChatGPT:
     def __init__(self):
         self.openai_api_key = settings.OPENAI_API_KEY
 
-    def get_data_from_research_paper_based_on_feature(self):
-        content = "what is the conclusion from the research " + processing_algorithms.article_summerization(Utils().read_pdf("research_papers/brjcancer00120-0090 (1).pdf"),
-            0.02)
+    def get_data_from_research_paper_based_on_feature(self, content):
+        content = "what is the conclusion from the research " + processing_algorithms.article_summerization(content,
+                                                                                                            0.02)
         openai.api_key = self.openai_api_key
         # model_engine = "text-davinci-002"
         # # Generate a response
@@ -32,6 +32,8 @@ class ChatGPT:
             model="gpt-3.5-turbo", messages=messages
         )
         reply = chat.choices[0].message.content
-        print(reply)
+        return reply
+        # print(reply)
 
-print(ChatGPT().get_data_from_research_paper_based_on_feature())
+
+# print(ChatGPT().get_data_from_research_paper_based_on_feature())
