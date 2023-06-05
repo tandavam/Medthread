@@ -51,4 +51,4 @@ STEPS TO EXECUTE THE CODE:
 
 OUTPUT IMAGE 
 
-![](../../Desktop/Screen Shot 2023-06-05 at 12.28.55 AM.png)
+![](Screen Shot 2023-06-05 at 12.28.55 AM.png)
