@@ -51,4 +51,4 @@ STEPS TO EXECUTE THE CODE:
 
 OUTPUT IMAGE 
 
-![](Screen Shot 2023-06-05 at 12.28.55 AM.png)
+![alt text](https://github.com/tandavam/Medthread/blob/main/Screen%20Shot%202023-06-05%20at%2012.28.55%20AM.png)
