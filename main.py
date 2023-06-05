@@ -75,7 +75,6 @@ for i in range(len(data)):
         relevant_papers.append(i)
 
 # Display the relevant papers
-import pdb;pdb.set_trace()
 if relevant_papers:
     print("Relevant Papers:")
     for paper_data in relevant_papers:
@@ -83,3 +82,5 @@ if relevant_papers:
         print("--------")
 else:
     print("No relevant papers found.")
+
+

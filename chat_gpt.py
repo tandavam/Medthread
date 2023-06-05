@@ -1,32 +1,19 @@
-import PyPDF2
 import openai
-# from chatgpt_wrapper import ChatGPT
-
-
+import article_summarization
 from utils import Utils
+import settings
+
+
 class ChatGPT:
     def __init__(self):
-        self.openai_api_key = "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"
-        self.messages = [{"role": "system", "content": "You are a intelligent assistant."}]
+        self.openai_api_key = settings.OPENAI_API_KEY
 
     def get_data_from_research_paper_based_on_feature(self):
-        content = "what is the conclusion from the research " + Utils().read_pdf("/Users/sachinsrinivasan/Development/Medthread/research_papers/40665540.pdf")
-        # self.messages.append({
-        #     "role": "user",
-        #     "content": content
-        # })
-        # # openai.Completion
+        content = "what is the conclusion from the research " + article_summarization.summarize(Utils().read_pdf(
+            "/Users/sachinsrinivasan/Development/Medthread/research_papers/Cancer - 2000 - Chang - Perineal talc exposure and risk of ovarian carcinoma.pdf"),
+            0.05)
         openai.api_key = self.openai_api_key
-        # # openai.Completion.create()
-        # chat = openai.ChatCompletion.create(
-        #     model="gpt-3.5-turbo", messages=self.messages
-        # )
-        # reply = chat.choices[0].message.content
-        # print(f"ChatGPT: {reply}")
-        # self.messages.append({"role": "assistant", "content": reply})
-        model_engine = "code-davinci-002"
-        prompt = "Who is the president of the United States"
-
+        model_engine = "text-davinci-002"
         # Generate a response
         completion = openai.Completion.create(
             engine=model_engine,
@@ -38,7 +25,7 @@ class ChatGPT:
         )
 
         response = completion.choices[0].text
-        print(response)
+        return response
 
 
 ChatGPT().get_data_from_research_paper_based_on_feature()

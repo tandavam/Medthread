@@ -36,4 +36,4 @@ def summarize(text, per):
     return summary
 
 
-print(summarize(Utils().read_pdf("/Users/sachinsrinivasan/Development/Medthread/research_papers/40665540.pdf"), 0.5))
+# print(summarize(Utils().read_pdf("/Users/sachinsrinivasan/Development/Medthread/research_papers/40665540.pdf"), 0.5))
