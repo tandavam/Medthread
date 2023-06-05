@@ -50,4 +50,4 @@ def remove_stop_words(query):
     for w in word_tokens:
         if w not in stop_words and len(w) > 1:
             filtered_sentence.append(w)
-    print(filtered_sentence)
+    return filtered_sentence
