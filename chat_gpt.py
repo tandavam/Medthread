@@ -1,5 +1,5 @@
 import openai
-import article_summarization
+import processing_algorithms
 from utils import Utils
 import settings
 
@@ -9,7 +9,7 @@ class ChatGPT:
         self.openai_api_key = settings.OPENAI_API_KEY
 
     def get_data_from_research_paper_based_on_feature(self):
-        content = "what is the conclusion from the research " + article_summarization.summarize(Utils().read_pdf(
+        content = "what is the conclusion from the research " + processing_algorithms.article_summerization(Utils().read_pdf(
             "/Users/sachinsrinivasan/Development/Medthread/research_papers/Cancer - 2000 - Chang - Perineal talc exposure and risk of ovarian carcinoma.pdf"),
             0.05)
         openai.api_key = self.openai_api_key

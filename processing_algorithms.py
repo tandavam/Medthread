@@ -1,11 +1,9 @@
-import spacy
-from spacy.lang.en.stop_words import STOP_WORDS
-from string import punctuation
-from heapq import nlargest
-from utils import Utils
+def article_summerization(text, per):
+    from heapq import nlargest
+    from string import punctuation
 
-
-def summarize(text, per):
+    import spacy
+    from spacy.lang.en.stop_words import STOP_WORDS
     nlp = spacy.load('en_core_web_sm')
     doc = nlp(text)
     tokens = [token.text for token in doc]
@@ -36,4 +34,20 @@ def summarize(text, per):
     return summary
 
 
-# print(summarize(Utils().read_pdf("/Users/sachinsrinivasan/Development/Medthread/research_papers/40665540.pdf"), 0.5))
+def remove_stop_words(query):
+    from nltk.corpus import stopwords
+    from nltk.tokenize import word_tokenize
+
+    stop_words = set(stopwords.words('english'))
+
+    word_tokens = word_tokenize(query)
+    # converts the words in word_tokens to lower case and then checks whether
+    # they are present in stop_words or not
+    # filtered_sentence = [w for w in word_tokens if not w.lower() in stop_words]
+    # with no lower case conversion
+    filtered_sentence = []
+
+    for w in word_tokens:
+        if w not in stop_words and len(w) > 1:
+            filtered_sentence.append(w)
+    print(filtered_sentence)
