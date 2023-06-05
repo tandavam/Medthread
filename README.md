@@ -47,3 +47,8 @@ STEPS TO EXECUTE THE CODE:
 2) If you are using conda environment then run the command "conda install --file conda_requirement.txt"
 3) If you are using virtual environment then run the command "pip install -r virenv_requirement.txt"
 4) And then run "python main.py" and enter the query when prompted.
+
+
+OUTPUT IMAGE 
+
+![](../../Desktop/Screen Shot 2023-06-05 at 12.28.55 AM.png)
