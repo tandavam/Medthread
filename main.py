@@ -6,9 +6,15 @@ import processing_algorithms
 
 
 class Medthread:
-    def __init__(self, user_query):
-        self.search_terms = processing_algorithms.remove_stop_words(user_query)
+    def __init__(self):
+        # self.search_terms = processing_algorithms.remove_stop_words(user_query)
+        pass
+
+    @staticmethod
+    def create_research_paper_list_and_summary():
+        import os
+        files = os.listdir("research_papers")
+        return files
 
 
-def build_search_terms(user_query):
-    pass
+print(Medthread().create_research_paper_list_and_summary())

@@ -9,23 +9,29 @@ class ChatGPT:
         self.openai_api_key = settings.OPENAI_API_KEY
 
     def get_data_from_research_paper_based_on_feature(self):
-        content = "what is the conclusion from the research " + processing_algorithms.article_summerization(Utils().read_pdf(
-            "/Users/sachinsrinivasan/Development/Medthread/research_papers/Cancer - 2000 - Chang - Perineal talc exposure and risk of ovarian carcinoma.pdf"),
-            0.05)
+        content = "what is the conclusion from the research " + processing_algorithms.article_summerization(Utils().read_pdf("research_papers/brjcancer00120-0090 (1).pdf"),
+            0.02)
         openai.api_key = self.openai_api_key
-        model_engine = "text-davinci-002"
-        # Generate a response
-        completion = openai.Completion.create(
-            engine=model_engine,
-            prompt=content,
-            max_tokens=2048,
-            n=1,
-            stop=None,
-            temperature=0.5,
+        # model_engine = "text-davinci-002"
+        # # Generate a response
+        # completion = openai.Completion.create(
+        #     engine=model_engine,
+        #     prompt=content,
+        #     max_tokens=2048,
+        #     n=1,
+        #     stop=None,
+        #     temperature=0.5,
+        # )
+        #
+        # response = completion.choices[0].text
+        # return response
+
+        messages = [{"role": "system", "content": "You are a intelligent assistant."},
+                    {"role": "user", "content": content}]
+        chat = openai.ChatCompletion.create(
+            model="gpt-3.5-turbo", messages=messages
         )
+        reply = chat.choices[0].message.content
+        print(reply)
 
-        response = completion.choices[0].text
-        return response
-
-
-ChatGPT().get_data_from_research_paper_based_on_feature()
+print(ChatGPT().get_data_from_research_paper_based_on_feature())
