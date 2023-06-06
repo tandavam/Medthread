@@ -49,6 +49,12 @@ STEPS TO EXECUTE THE CODE:
 4) And then run "python main.py" and enter the query when prompted.
 
 
+ROUGH DIAGRAM OF THE APPROACH
+
+
+![Screen Shot 2023-06-05 at 7 50 34 PM](https://github.com/tandavam/Medthread/assets/78110303/b4bce903-33cd-4b26-9b27-b811dd93f62d)
+
+
 OUTPUT IMAGE 
 
 ![alt text](https://github.com/tandavam/Medthread/blob/main/Screen%20Shot%202023-06-05%20at%2012.28.55%20AM.png)
